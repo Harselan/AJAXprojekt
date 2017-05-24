@@ -1,18 +1,18 @@
 <?php
+header('Content-type: application/json');
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "data";
+$dbname = "ajaxcomments";
 
 $conn = mysqli_connect($servername,$username,$password,$dbname);
-$resultat;
-header('Content-type: application/json');
-$result = mysqli_query($conn, "SELECT * FROM tabeller");
 
-if(!(mysqli_query($conn, "SELECT * FROM tabeller"))){
-    echo mysqli_error($conn);
-}
+$tempstring = "";
+$result = mysqli_query($conn, "SELECT ID,NAME,COMMENT FROM comments");
 while($row = mysqli_fetch_object($result)){
-    echo json_encode($row);
+    $tempstring .= json_encode($row) . ",";
 }
+$tempstring = "[".$tempstring."]";
+$tempstring = str_replace(",]","]",$tempstring);
+echo json_encode($tempstring);
 ?>
