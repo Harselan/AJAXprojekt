@@ -1,14 +1,78 @@
-.test{
-    width:100px;
-    height:100px;
-    background-color:pink;
-    display:none;
+*{
+    margin:0;
 }
-.show{
-    display:block;
+body{
+    background-image:url("../Bilder/background1.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color:white;
 }
-td{
-    width:10%;
+.header, .footer, .submit{
+    transition:all 0.3s;    
+}
+.title{
+    font-size:5vw;
     text-align: center;
-    border:1px solid black;
+    background-color:rgba(44,62,80,0.6);
+    transition:all 0.3s;
+}
+.inputname, h2, .footer, input{
+    float:right;
+}
+.login .inputname, .login h2, .header, .login input{
+    float:left;
+}
+.header, .footer{
+    background-color:rgba(44,62,80,0.6);
+    width:25%;
+    display:block;
+    margin-top:2%;
+}
+.commentdiv, .commentadd{
+    background-color:rgba(44,62,80,0.6);
+    width:80%;
+    margin:0 auto;
+    text-align: center;
+    transition: all 0.3s;
+    margin-top:5%;
+}
+.head{
+    height:60px;
+    background-color:rgba(44,62,80,0.6);
+    width:15%;
+    margin:0 auto;
+    text-align: center;
+    transition: all 0.3s;
+    margin-top:2%;
+}
+.head .submit{
+    margin:0 auto;
+    margin-right:60px;
+    float:none;
+}
+.commentadd{
+    height:125px;
+}
+.header:hover, .footer:hover, .title:hover, .commentdiv:hover, .commentadd:hover{
+    background-color:rgba(44,62,80,0.8);    
+}
+.submit:hover{
+    cursor:pointer;
+}
+.submit{
+    color:white;
+    font-weight: bold;
+    background-color:rgba(127,140,141, 0.6);
+    text-decoration: none;
+    border:none;
+    border-radius:3px;
+    padding:5px;
+    margin:10px;
+    float:none;
+}
+#logout{
+    float: right;
+}
+.submit:hover{
+    background-color:rgba(127,140,141, 0.8); 
 }

@@ -8,13 +8,12 @@ $(document).ready(function() {
             success: function(result) {
                 result = JSON.parse(result);
                 $(".comments").remove();
-                var comments;
-                comments = $("<div class='comments'>");
+                var comments = $("<div class='comments'>");
                 comments.append("<h1>Kommentarer</h1>");
                 for(var i = 0; i < result.length; i++){
                     comments.append("<h3>"+result[i].NAME+":</h3>"+result[i].COMMENT+"<br><br>");
                 }
-                $('.wrapper').prepend(comments);
+                $('.commentdiv').prepend(comments);
             },
             error: function(jqXHR, textStatus, errorThrown){
                 alert('error: ' + textStatus + ': ' + errorThrown);
